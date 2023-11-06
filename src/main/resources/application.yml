@@ -1,0 +1,47 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/corpusrole?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      filter:
+        config:
+          enabled: true
+        stat:
+          enabled: true
+      filters: stat,wall,slf4j
+      initial-size: 5
+      max-active: 20
+      stat-view-servlet:
+        allow: 127.0.0.1
+        login-username: root
+        login-password: 123456
+        reset-enable: true
+      web-stat-filter:
+        enabled: true
+        exclusions: .js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*
+        session-stat-enable: true
+        session-stat-max-count: 100
+        url-pattern: /*
+
+
+minio:
+  endpoint: http://192.168.204.130:9000
+  bucketName: imgocr
+  accessKey: harkBlnUiK1H924VJSXN
+  secretKey: VirWKlL3h8hmvJM0QRs2BeQAq3lKk9aPSqmluzaM
+
+logging:
+  level: #指定级别
+    com.example:
+      trace
+  file:
+    name: ./log/server.log
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      file-name-pattern: server.%d.%i.log

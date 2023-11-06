@@ -1,0 +1,20 @@
+2023-11-05 16:06:08.598  INFO 119916 --- [main] com.example.hundsun.HundSunApplication   : Starting HundSunApplication using Java 1.8.0_352 on LAPTOP-16U262QG with PID 119916 (D:\intellij IDEApro\HundSun\target\classes started by 刘 in D:\intellij IDEApro\HundSun)
+2023-11-05 16:06:08.599 DEBUG 119916 --- [main] com.example.hundsun.HundSunApplication   : Running with Spring Boot v2.7.17, Spring v5.3.30
+2023-11-05 16:06:08.599  INFO 119916 --- [main] com.example.hundsun.HundSunApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 16:06:09.282  INFO 119916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-11-05 16:06:09.287  INFO 119916 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-05 16:06:09.288  INFO 119916 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-11-05 16:06:09.391  INFO 119916 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-05 16:06:09.391  INFO 119916 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 764 ms
+2023-11-05 16:06:09.839  INFO 119916 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2023-11-05 16:06:10.126  INFO 119916 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2023-11-05 16:06:11.171  INFO 119916 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-11-05 16:06:11.178  INFO 119916 --- [main] com.example.hundsun.HundSunApplication   : Started HundSunApplication in 2.859 seconds (JVM running for 3.847)
+2023-11-05 16:06:11.179  INFO 119916 --- [main] com.example.hundsun.HundSunApplication   : 项目启动成功！！！
+2023-11-05 16:06:17.658  INFO 119916 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2023-11-05 16:06:20.153  INFO 103192 --- [main] com.example.hundsun.HundSunApplication   : Starting HundSunApplication using Java 1.8.0_352 on LAPTOP-16U262QG with PID 103192 (D:\intellij IDEApro\HundSun\target\classes started by 刘 in D:\intellij IDEApro\HundSun)
+2023-11-05 16:06:20.153 DEBUG 103192 --- [main] com.example.hundsun.HundSunApplication   : Running with Spring Boot v2.7.17, Spring v5.3.30
+2023-11-05 16:06:20.154  INFO 103192 --- [main] com.example.hundsun.HundSunApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-11-05 16:06:20.803  INFO 103192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-11-05 16:06:20.808  INFO 103192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-05 16:06:20.808  INFO 103192 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
