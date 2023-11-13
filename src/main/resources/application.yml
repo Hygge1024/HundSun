@@ -1,9 +1,9 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/corpusrole?characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/hundsun02?characterEncoding=utf8&serverTimezone=UTC
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
@@ -30,15 +30,15 @@ spring:
 
 
 minio:
-  endpoint: http://192.168.204.130:9000
+  endpoint: http://8.137.53.253:9000
   bucketName: imgocr
-  accessKey: harkBlnUiK1H924VJSXN
-  secretKey: VirWKlL3h8hmvJM0QRs2BeQAq3lKk9aPSqmluzaM
+  accessKey: C4RdB4eytLOl7SJRf5qi
+  secretKey: GRHwetreXgu2lKZUxctGgrg5JkMwUxQL9Cl5zAGj
 
 logging:
   level: #指定级别
     com.example:
-      trace
+      info
   file:
     name: ./log/server.log
   logback:

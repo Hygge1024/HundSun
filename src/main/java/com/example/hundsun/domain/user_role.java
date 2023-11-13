@@ -6,9 +6,11 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 @Data
-public class Permissions {
+public class user_role {
     @TableId(type = IdType.AUTO)
     private int id;
-    @TableField("permissionName")
-    private String permissionName;
+    @TableField("userID")
+    private int userID;
+    @TableField("roleID")
+    private int roleID;
 }

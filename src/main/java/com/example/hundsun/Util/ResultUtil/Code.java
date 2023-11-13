@@ -7,7 +7,9 @@ public class Code {
     public static final Integer UPDATE_OK = 1003;
     public static final Integer GET_OK = 1004;
     public static final Integer LOGIN_OK = 1005;
-    public static final Integer AUTHORITY_OK = 1005;
+    public static final Integer AUTHORITY_OK = 1006;
+    public static final Integer SQL_OK = 1007;
+
 
 
     //错误形式
@@ -17,6 +19,7 @@ public class Code {
     public static final Integer GET_ERR = 2004;
     public static final Integer LOGIN_ERR = 2005;
     public static final Integer AUTHORITY_ERR = 2006;
+    public static final Integer SQL_ERR = 2007;
 
 
     public static final Integer SYSTEM_UNKNOW_ERR = 2999;

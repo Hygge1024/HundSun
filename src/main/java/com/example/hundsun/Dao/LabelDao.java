@@ -1,9 +1,9 @@
 package com.example.hundsun.Dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.hundsun.domain.students;
+import com.example.hundsun.domain.Labels;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface studentDao extends BaseMapper<students> {
+public interface LabelDao extends BaseMapper<Labels> {
 }

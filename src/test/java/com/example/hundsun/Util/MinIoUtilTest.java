@@ -89,7 +89,7 @@ public class MinIoUtilTest {
     //获取单个对象的url地址
     @Test
     void getPresignedObjectUrl(){
-        System.out.println(minioUtil.getPresignedObjectUrlImg("img_4.png","imgocr"));
+        System.out.println(minioUtil.getPresignedObjectUrlImg("img_1.png","imgocr"));
     }
 
 }

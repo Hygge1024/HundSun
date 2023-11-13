@@ -1,6 +1,7 @@
 package com.example.hundsun.Config;
 
 import com.example.hundsun.Config.Realm.MyRealm;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.mgt.SessionsSecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -32,6 +33,7 @@ public class ShrioConfig {
     @Bean
     public MyRealm myRealm(){
         MyRealm myRealm = new MyRealm();
+        myRealm.setCredentialsMatcher(hashedCredentialsMatcher());
         return myRealm;
     }
 
@@ -45,6 +47,13 @@ public class ShrioConfig {
         securityManager.setRealm(myRealm());
         return securityManager;
     }
+    @Bean
+    public HashedCredentialsMatcher hashedCredentialsMatcher(){
+        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        hashedCredentialsMatcher.setHashAlgorithmName("md5");
+        hashedCredentialsMatcher.setHashIterations(2);
+        return hashedCredentialsMatcher;
+    }
 
     /**
      * 这是过滤条件和跳转条件
@@ -56,6 +65,8 @@ public class ShrioConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String,String> map = new HashMap<>();
+        //放行路由
+        map.put("/register","anon");
         //退出
         map.put("/logout","logout");
         //对所有用户认证
