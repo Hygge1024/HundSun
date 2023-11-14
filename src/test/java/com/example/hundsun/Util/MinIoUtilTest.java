@@ -61,7 +61,7 @@ public class MinIoUtilTest {
     //	文件上传
     @Test
     void upload(){
-        String filePath ="C:\\Users\\刘\\Desktop\\tdn.jpg";
+        String filePath ="C:\\Users\\刘\\Desktop\\Diagram2.png";
         File file = new File(filePath);
         MultipartFile multipartFile = null;
         try (FileInputStream input = new FileInputStream(file)){
@@ -72,7 +72,7 @@ public class MinIoUtilTest {
                     "text/plain", // 文件类型
                     input // 文件输入流
             );
-            minioUtil.upload(multipartFile,"imgclas");
+            minioUtil.upload(multipartFile,"imgocr");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -89,7 +89,7 @@ public class MinIoUtilTest {
     //获取单个对象的url地址
     @Test
     void getPresignedObjectUrl(){
-        System.out.println(minioUtil.getPresignedObjectUrlImg("img_1.png","imgocr"));
+        System.out.println(minioUtil.getPresignedObjectUrlImg("8412438174921949184.png","imgocr"));
     }
 
 }

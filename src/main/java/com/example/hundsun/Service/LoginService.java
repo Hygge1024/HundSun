@@ -8,4 +8,5 @@ public interface LoginService extends IService<Users> {
   Users getUserByAccount(String userAccount);
   Result register(Users users) throws InterruptedException;
   String generateAccount();
+
 }

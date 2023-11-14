@@ -1,11 +1,17 @@
 server:
   port: 8082
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/hundsun02?characterEncoding=utf8&serverTimezone=UTC
-    username: root
-    password: 123456
+    url: jdbc:mysql://8.137.53.253:3306/hundsun02?characterEncoding=utf8&serverTimezone=GMT%2b8
+    username: hundsun02
+    password: HFtrcfMdedjFAX8T
+#    url: jdbc:mysql://localhost:3306/hundsun02?characterEncoding=utf8&serverTimezone=GMT%2b8
+#    username: root
+#    password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       filter:
@@ -45,3 +51,7 @@ logging:
     rollingpolicy:
       max-file-size: 10MB
       file-name-pattern: server.%d.%i.log
+
+baidu:
+  APIkey: dRzeeE2kKkC10kb5WrLj0CFC
+  Secretkey: Gy2gBGX2UNgo1Q89xbnL3Z1AdMlgNQkB

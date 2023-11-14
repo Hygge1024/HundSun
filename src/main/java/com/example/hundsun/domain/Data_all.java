@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class Data_all {
     @TableId(type = IdType.AUTO)
@@ -16,5 +18,5 @@ public class Data_all {
     @TableField("ddescription")
     private String ddescription;
     @TableField("uploadDate")
-    private Data uploadDate;
+    private Date uploadDate;
 }

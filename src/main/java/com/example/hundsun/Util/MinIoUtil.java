@@ -8,6 +8,7 @@ import io.minio.http.Method;
 import io.minio.messages.Bucket;
 import io.minio.messages.Item;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FastByteArrayOutputStream;
@@ -23,11 +24,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Component
+@Slf4j
 public class MinIoUtil {
     @Autowired
     private MinIoConfig prop;
     @Resource
     private MinioClient minioClient;
+    @Autowired
+    private SnowFlakeUtils snowFlakeUtils;
 
     /**
      * 获取全部bucket
@@ -142,11 +146,11 @@ public class MinIoUtil {
         if (StringUtils.isBlank(originalFilename)){
             throw new RuntimeException();
         }
-        /**
-         * 文件名部分是否需要修改
-         */
-//        String fileName =  originalFilename.substring(originalFilename.lastIndexOf("."));
-        String objectName =  originalFilename;
+        //改名称
+        String fileName =  originalFilename.substring(originalFilename.lastIndexOf("."));
+        String idName = snowFlakeUtils.getNextId()+"";
+        String objectName =  idName + fileName;
+        log.info("上传的文件名为："+objectName);
         try {
             PutObjectArgs objectArgs = PutObjectArgs.builder().bucket(BucketName).object(objectName)
                     .stream(file.getInputStream(), file.getSize(), -1).contentType(file.getContentType()).build();

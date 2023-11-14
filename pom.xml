@@ -21,11 +21,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.mybatis.spring.boot</groupId>-->
-<!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
-<!--            <version>2.3.1</version>-->
-<!--        </dependency>-->
         <!--		mybatis-plus -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -101,6 +96,12 @@
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-spring-boot-web-starter</artifactId>
             <version>1.9.0</version>
+        </dependency>
+<!--        文件转换toMultipartFile-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
         </dependency>
 
 

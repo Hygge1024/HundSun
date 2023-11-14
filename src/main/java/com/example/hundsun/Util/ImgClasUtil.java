@@ -5,8 +5,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.HashSet;
 import java.util.Set;
@@ -112,8 +115,8 @@ public class ImgClasUtil {
 
     /**
      *计算两个文本之间的相似度
-     * @param strA
-     * @param strB
+     * @param strA 业务人员定义标签
+     * @param strB 自动识别的5种可能标签
      * @return 相似度值double类型
      */
     public static double calculateCosineSimilarity(String strA, String strB) {

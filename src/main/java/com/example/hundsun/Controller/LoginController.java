@@ -14,10 +14,7 @@ import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
@@ -26,7 +23,7 @@ public class LoginController {
     private LoginService loginService;
     @GetMapping("/login")
     public String login(){
-        return "您还未请登录，进入登录界面";
+        return "您还未请登录，进入登录界面";//可以进行页面的跳转
     }
     @PostMapping("/login")
     public Result login(@RequestBody Users user){

@@ -70,7 +70,7 @@ public class ShrioConfig {
         //退出
         map.put("/logout","logout");
         //对所有用户认证
-        map.put("/**","authc");
+//        map.put("/**","authc");
         //登录
         shiroFilterFactoryBean.setLoginUrl("/login");
         //首页

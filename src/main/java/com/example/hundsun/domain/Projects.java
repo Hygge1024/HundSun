@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class Projects {
     @TableId(type = IdType.AUTO)
@@ -16,7 +18,7 @@ public class Projects {
     @TableField("pdescription")
     private String pdescription;
     @TableField("pcreate")
-    private Data pcreate;
+    private Date pcreate;
     @TableField("pdeadline")
-    private Data pdeadline;
+    private Date pdeadline;
 }
