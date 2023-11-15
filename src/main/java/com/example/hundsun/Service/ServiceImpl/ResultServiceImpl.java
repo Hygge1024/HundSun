@@ -33,6 +33,7 @@ public class ResultServiceImpl extends ServiceImpl<ResultsDao,Results> implement
      */
     @Override
     public int create(Results results) {
-        return resultsDao.insert(results);
+        resultsDao.insert(results);
+        return results.getId();
     }
 }

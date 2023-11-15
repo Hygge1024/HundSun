@@ -27,7 +27,7 @@ public class ResultServiceImpl {
         Results results = new Results();
         results.setResultUrl("更新后的URL");
         results.setMarkAccount("321");
-        results.setIsPre(2);
+        results.setIsPre(1);
         results.setExAccount("123");
         System.out.println(resultsService.create(results));
     }

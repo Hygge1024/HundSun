@@ -16,6 +16,9 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 登录注册的Controller
+ */
 @RestController
 @Slf4j
 public class LoginController {

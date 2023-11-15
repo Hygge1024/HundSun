@@ -9,4 +9,5 @@ public interface dataall_resultService  extends IService<Dataall_result> {
     String UploadFile(String BucketName, MultipartFile file);
     int UploadResult(String BucketName, MultipartFile file);
     int insertOne(int v_id,int p_id,int r_id);
+    int find(String findstr,String[] arr);
 }

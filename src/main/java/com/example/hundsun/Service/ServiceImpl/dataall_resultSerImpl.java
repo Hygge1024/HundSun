@@ -48,6 +48,12 @@ public class dataall_resultSerImpl extends ServiceImpl<dataall_resultDao, Dataal
         return SimpleUrl;
     }
 
+    /**
+     * 上传文件到指定位置，并将记录存储到results表中
+     * @param BucketName 桶名
+     * @param file 文件
+     * @return 返回results表中的主键id
+     */
     @Override
     public int UploadResult(String BucketName, MultipartFile file) {
         String SimpleUrl = this.UploadFile(BucketName,file);
@@ -59,6 +65,13 @@ public class dataall_resultSerImpl extends ServiceImpl<dataall_resultDao, Dataal
         return results.getId();
     }
 
+    /**
+     * 向dataall_result中插入数据
+     * @param v_id 版本id
+     * @param d_id 数据id
+     * @param r_id 结果id
+     * @return 返回操作数量
+     */
     @Override
     public int insertOne(int v_id, int d_id, int r_id) {
         Dataall_result dataallResult = new Dataall_result();
@@ -66,5 +79,13 @@ public class dataall_resultSerImpl extends ServiceImpl<dataall_resultDao, Dataal
         dataallResult.setD_id(d_id);
         dataallResult.setR_id(r_id);
         return dataallResultDao.insert(dataallResult);
+    }
+    public int find(String findstr,String[] arr){
+        for(int i = 0; i < arr.length; i++){
+            if(findstr.equals(arr[i])){
+                return i+1;
+            }
+        }
+        return -1;
     }
 }

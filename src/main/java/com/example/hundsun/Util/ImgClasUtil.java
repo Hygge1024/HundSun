@@ -106,7 +106,7 @@ public class ImgClasUtil {
                 double similarity = calculateCosineSimilarity(clasend,target);
                 if(similarity > bestCompareScore){
                     bestCompareScore = similarity;
-                    bestLabel = clasend;
+                    bestLabel = target;
                 }
             }
         }

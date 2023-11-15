@@ -17,4 +17,6 @@ public class Labels {
     private int p_id;
     @TableField("v_id")
     private int v_id;
+    @TableField("description")
+    private String description;
 }
