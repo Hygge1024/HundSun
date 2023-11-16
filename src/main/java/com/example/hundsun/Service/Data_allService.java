@@ -1,5 +1,6 @@
 package com.example.hundsun.Service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.hundsun.domain.Data_all;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,5 +38,14 @@ public interface Data_allService extends IService<Data_all> {
      * @return
      */
     Data_all getOneByID(int id);
+
+    /**
+     * 分页查询-通过项目id
+     * @param p_id 项目id
+     * @param currentPage 当前页
+     * @param pageSize 每页数量
+     * @return 返回查询结果
+     */
+    IPage<Data_all> getPageByP_id(int p_id,int currentPage,int pageSize);
 
 }

@@ -6,9 +6,13 @@ import com.example.hundsun.Exception.SystemException;
 
 import com.example.hundsun.Util.ResultUtil.Code;
 import com.example.hundsun.Util.ResultUtil.Result;
+import org.apache.http.conn.HttpHostConnectException;
 import org.apache.shiro.authz.AuthorizationException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.net.ConnectException;
+
 /**
  * 用于定义全局异常和全局数据绑定规则的类
  * 只写了功能，实际的具体异常没写
@@ -53,7 +57,6 @@ public class ProjectExceptionAdvice {
         ex.printStackTrace();
         return new Result(Code.AUTHORITY_ERR,"没有通过权限验证！",ex.getMessage());
     }
-
     /**
      * 数据库方面的异常捕获（待验证）
      * @param ex 对象

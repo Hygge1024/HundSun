@@ -1,6 +1,8 @@
 package com.example.hundsun.Service.ServiceImpl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.hundsun.Dao.Data_allDao;
 import com.example.hundsun.Service.Data_allService;
@@ -93,5 +95,21 @@ public class Data_allServiceImpl extends ServiceImpl<Data_allDao, Data_all> impl
     public Data_all getOneByID(int id) {
         return dataAllDao.selectById(id);
     }
+    /**
+     * 分页查询-通过项目id
+     * @param p_id 项目id
+     * @param currentPage 当前页
+     * @param pageSize 每页数量
+     * @return 返回查询结果
+     */
+    @Override
+    public IPage<Data_all> getPageByP_id(int p_id, int currentPage, int pageSize) {
+        IPage page = new Page(currentPage,pageSize);
+        QueryWrapper<Data_all> wrapper = new QueryWrapper<>();
+        wrapper.lambda()
+                .eq(Data_all::getP_id,p_id);
+        return dataAllDao.selectPage(page,wrapper);
+    }
+
 
 }

@@ -1,5 +1,6 @@
 package com.example.hundsun.Service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.hundsun.domain.Dataall_result;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,4 +11,5 @@ public interface dataall_resultService  extends IService<Dataall_result> {
     int UploadResult(String BucketName, MultipartFile file);
     int insertOne(int v_id,int p_id,int r_id);
     int find(String findstr,String[] arr);
+    int getByPidVid(int d_id,int v_id);
 }

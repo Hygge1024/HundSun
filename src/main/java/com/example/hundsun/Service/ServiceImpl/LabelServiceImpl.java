@@ -17,11 +17,27 @@ import java.util.List;
 public class LabelServiceImpl extends ServiceImpl<LabelDao, Labels> implements LabelService {
     @Autowired
     private LabelDao labelDao;
+    /**
+     * 查找项目的所有标签
+     * @param p_id 项目id
+     * @return 返回所有项目标签
+     */
     @Override
     public List<Labels> getAllByP_id(int p_id) {
         QueryWrapper<Labels> wrapper = new QueryWrapper<>();
         wrapper.lambda()
                 .eq(Labels::getP_id,p_id);
         return labelDao.selectList(wrapper);
+    }
+
+    /**
+     * 创建新标签
+     * @param labels 标签实体类
+     * @return 返回lid
+     */
+    @Override
+    public int create(Labels labels) {
+        labelDao.insert(labels);
+        return labels.getId();
     }
 }
