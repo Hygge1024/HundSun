@@ -13,5 +13,9 @@ public class dataall_resultSerImplTest {
     void getByD_id(){
         System.out.println(dataallResultService.getByD_id(1));
     }
+    @Test
+    void getByPidVid(){
+        System.out.println(dataallResultService.getByPidVid(5,1));
+    }
 
 }

@@ -22,5 +22,6 @@ public class Code {
     public static final Integer SQL_ERR = 2007;
 
 
+    public static final Integer CONNECT_ERR = 2008;
     public static final Integer SYSTEM_UNKNOW_ERR = 2999;
 }

@@ -80,6 +80,8 @@ public class dataall_resultSerImpl extends ServiceImpl<dataall_resultDao, Dataal
         dataallResult.setR_id(r_id);
         return dataallResultDao.insert(dataallResult);
     }
+
+
     public int find(String findstr,String[] arr){
         for(int i = 0; i < arr.length; i++){
             if(findstr.equals(arr[i])){
@@ -87,5 +89,20 @@ public class dataall_resultSerImpl extends ServiceImpl<dataall_resultDao, Dataal
             }
         }
         return -1;
+    }
+
+    /**
+     * 获取结果rid
+     * @param d_id
+     * @param v_id
+     * @return
+     */
+    @Override
+    public int getByPidVid(int d_id, int v_id) {
+        QueryWrapper<Dataall_result> wrapper = new QueryWrapper<>();
+        wrapper.lambda()
+                .eq(Dataall_result::getV_id,v_id)
+                .eq(Dataall_result::getD_id,d_id);
+        return dataallResultDao.selectOne(wrapper).getR_id();
     }
 }

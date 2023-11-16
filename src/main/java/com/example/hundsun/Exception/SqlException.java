@@ -2,7 +2,6 @@ package com.example.hundsun.Exception;
 
 public class SqlException extends java.sql.SQLException {
     private Integer code;
-
     public Integer getCode() {
         return code;
     }

@@ -60,3 +60,6 @@ logging:
 baidu:
   APIkey: dRzeeE2kKkC10kb5WrLj0CFC
   Secretkey: Gy2gBGX2UNgo1Q89xbnL3Z1AdMlgNQkB
+#写模型的url地址
+modeService:
+  ocrMode: http://127.0.0.1:8866/predict/ch_pp_ocrv3

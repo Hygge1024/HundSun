@@ -62,8 +62,13 @@ public class Data_allServiceTest {
     @Test
     void getAllByP_id(){
         System.out.println(dataAllService.getAllByP_id(1));
-    }@Test
+    }
+    @Test
     void getOneByID(){
         System.out.println(dataAllService.getOneByID(1));
+    }
+    @Test
+    void getPageByP_id(){
+        System.out.println(dataAllService.getPageByP_id(1,1,5).getRecords());
     }
 }
