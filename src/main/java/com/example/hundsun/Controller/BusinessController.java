@@ -109,7 +109,7 @@ public class BusinessController {
 
     /**
      * 业务人员定义-图片分类
-     * @param defines 预定义的类型（did、pid、vid、resourceUrl、labelname）
+     * @param defines 预定义的类型（did、p_id、vid、resourceUrl、labelname）
      * @return 返回定义成功情况
      */
     @PostMapping("/define/imgclas")
@@ -163,10 +163,6 @@ public class BusinessController {
                 i++;
                 if(bestEnd != null){
                     //将结果(lid)存入Results中，并在Dataall_result中进行记录
-//                    String jsonString = "{\"identify\":\""+bestEnd+"\"}";
-//                    String endName = bestEnd+".json";
-//                    MultipartFile multipartFile = fileUtil.createMultipartFile(endName,jsonString);
-//                    int r_id = dataall_ResultService.UploadResult("clasjson",multipartFile);
                     Results results = new Results();
                     results.setIsPre(1);
                     results.setL_id(dataall_ResultService.find(bestEnd,label));
@@ -197,7 +193,7 @@ public class BusinessController {
                 String jsonString = ends;
                 String endName = "11.json";
                 MultipartFile multipartFile = fileUtil.createMultipartFile(endName,jsonString);
-                int r_id = dataall_ResultService.UploadResult("clasjson",multipartFile);
+                int r_id = dataall_ResultService.UploadResult("ocrjson",multipartFile);
                 log.info("r_id= "+ r_id);
                 dataall_ResultService.insertOne(v_id,dataOne.getId(),r_id);
                 i++;
