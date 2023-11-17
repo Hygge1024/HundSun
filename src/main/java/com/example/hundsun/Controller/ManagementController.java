@@ -76,6 +76,16 @@ public class ManagementController {
         String msg = p_id != 0 ? "创建项目成功，p_id如下":"创建项目失败";
         return new Result(code,msg,p_id);
     }
+    /**
+     * 更新项目（进度）
+     */
+    @GetMapping("/project/state/{p_id}/{state}")
+    public Result updateState(@PathVariable int p_id,@PathVariable int state){
+        int flag = projectService.updateState(p_id,state);
+        Integer code = flag != 0? Code.GET_OK:Code.GET_ERR;
+        String msg = flag != 0 ? "更新项目成功":"更新项目失败";
+        return new Result(code,msg,flag);
+    }
 
     /**
      * 当前项目新建版本

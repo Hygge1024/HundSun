@@ -5,10 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.hundsun.Dao.*;
 import com.example.hundsun.Service.ProjectService;
 import com.example.hundsun.domain.*;
-import com.sun.jndi.ldap.Ber;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,11 +79,25 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectsDao, Projects> imple
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT+8"));
         Date currentDate = calendar.getTime();
         project.setPcreate(currentDate);
+        project.setPstate(0);
         projectsDao.insert(project);
         int p_id = project.getId();
         //向Versions表中初始化信息
         this.createVersion(p_id);
         return p_id;
+    }
+
+    /**
+     * 更新项目（进度）
+     * @param p_id 项目id
+     * @param state 状态
+     * @return 是否成功
+     */
+    @Override
+    public int updateState(int p_id,int state) {
+        Projects projects = projectsDao.selectById(p_id);
+        projects.setPstate(state);
+        return projectsDao.updateById(projects);
     }
 
     /**
@@ -113,6 +124,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectsDao, Projects> imple
         wrapper.lambda()
                 .eq(Users::getAccount, Account);
         Users users = usersDao.selectOne(wrapper);
+        users.setCounts(users.getCounts()+1);
+        //对用户counts加1更新
+        usersDao.updateById(users);
         int u_id = users.getId();
         project_user projectUser = new project_user();
         projectUser.setP_id(p_id);

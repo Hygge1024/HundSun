@@ -34,6 +34,12 @@ public interface ProjectService  extends IService<Projects> {
      * 创建项目(需要选择 版本、类型)
      */
     int createProject(Projects project);
+
+    /**
+     * 更新项目（进度）
+     */
+    int updateState(int p_id,int projects);
+
     /**
      * 当前项目新建版本
      */

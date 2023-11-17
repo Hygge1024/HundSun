@@ -21,4 +21,6 @@ public class Projects {
     private Date pcreate;
     @TableField("pdeadline")
     private Date pdeadline;
+    @TableField("pstate")
+    private int pstate;
 }
